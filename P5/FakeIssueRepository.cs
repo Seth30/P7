@@ -11,7 +11,7 @@ namespace P5
         public const string FUTURE_DISCOVERY_DATETIME_ERROR = "Issues can't be from the future.";
         public const string EMPTY_DISCOVERER_ERROR = "A Discoverer is required.";
 
-        private static List<Issue> _Issues = new List<Issue>();
+        public static List<Issue> _Issues = new List<Issue>();
 
         public FakeIssueRepository()
         { 
@@ -38,7 +38,7 @@ namespace P5
             {
                 return EMPTY_DISCOVERER_ERROR;
             }
-            issue.Id = GetNextId();
+            issue.ProjectId = GetNextId();
             _Issues.Add(issue);
 
             return NO_ERROR;
