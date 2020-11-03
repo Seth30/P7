@@ -37,7 +37,7 @@ namespace P5
             issue.Title = Titlebox.Text.Trim();
             issue.Id = i;
             issue.DiscoveryDate = dateTimePicker1.Value;
-            issue.Discoverer = discovererbox.SelectedItem.ToString();
+            issue.Discoverer = discovererbox.GetItemText(discovererbox.SelectedItem);
             issue.Component = textBox3.Text.Trim();
             string statusval = statusbox.SelectedItem.ToString();
             issue.IssueStatusId = issueRepository.GetIdByStatus(statusval);

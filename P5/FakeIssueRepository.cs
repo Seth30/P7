@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace P5
 {
@@ -41,6 +42,61 @@ namespace P5
             _Issues.Add(issue);
 
             return NO_ERROR;
+        }
+
+        public int GetTotalNumberOfIssues(int Projectid)
+        {
+            int num=0;
+            foreach (Issue x in _Issues)
+            {
+                if (x.ProjectId == Projectid)
+                {
+                    num++;
+                }
+            }
+            return num;
+        }
+        public List<string> GetIssuesByMonth(int Projectid)
+        {
+            List<string> issues = new List<string>();
+            DateTime today = DateTime.Today;
+            int year = today.Year;
+            for (int x = 1; x < 13; x++)
+            {
+                foreach (Issue y in _Issues)
+                {
+                    if (y.DiscoveryDate.Month == x)
+                    {
+                        if (y.ProjectId == Projectid && y.DiscoveryDate.Year == year)
+                        {
+                            issues.Add(y.DiscoveryDate.Month.ToString());
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return issues;
+        }
+        public List<string> GetIssuesbyDiscoverer(int Projectid)
+        {
+            List<string> issues = new List<string>();
+            foreach (AppUser user in FakeAppUserRepository._AppUsers.Values)
+            {
+                foreach (Issue y in _Issues)
+                {
+                    if (y.Discoverer.Trim() == user.UserName.Trim())
+                    {
+                        if (y.ProjectId == Projectid)
+                        {
+                            issues.Add(y.Discoverer);
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return issues;
         }
     }
 }

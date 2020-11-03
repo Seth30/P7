@@ -125,6 +125,7 @@
             this.issuesDashboardToolStripMenuItem.Name = "issuesDashboardToolStripMenuItem";
             this.issuesDashboardToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.issuesDashboardToolStripMenuItem.Text = "&Dashboard";
+            this.issuesDashboardToolStripMenuItem.Click += new System.EventHandler(this.issuesDashboardToolStripMenuItem_Click);
             // 
             // issuesRecordToolStripMenuItem
             // 
