@@ -5,7 +5,7 @@ namespace P5
 {
     public class FakeIssueStatusRepository : IIssueStatusRepository
     {
-        private static List<IssueStatus> _IssueStatuses = new List<IssueStatus>();
+        public static List<IssueStatus> _IssueStatuses = new List<IssueStatus>();
 
         public FakeIssueStatusRepository()
         {
@@ -19,7 +19,7 @@ namespace P5
                 _IssueStatuses.Add(new IssueStatus { Value = "Closed - By Design", Id = 5 });
             }
         }
-        public void Add(string value, int Id) 
+        public void Add(int Id, string value) 
         {
             _IssueStatuses.Add(new IssueStatus { Value = value, Id = Id });
         }

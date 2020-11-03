@@ -19,7 +19,7 @@ namespace P5
         }
         public void createbutton_Click(object sender, EventArgs e)
         {
-            FakeIssueRepository issueRepository = new FakeIssueRepository();
+            FakeIssueStatusRepository issueRepository = new FakeIssueStatusRepository();
             Issue issue = new Issue();
             issue.Title = Titlebox.Text.Trim();
             var rand = new Random();
@@ -34,7 +34,9 @@ namespace P5
             issue.DiscoveryDate = dateTimePicker1.Value;
             issue.Discoverer = discovererbox.SelectedItem.ToString();
             issue.Component = textBox3.Text.Trim();
-            issue.IssueStatusId = statusbox.SelectedItem.ToString();
+            string statusval = statusbox.SelectedItem.ToString();
+            issue.IssueStatusId = issueRepository.GetIdByStatus(statusval);
+
         }
     }
 }
