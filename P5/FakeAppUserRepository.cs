@@ -4,7 +4,7 @@ namespace P5
 {
     public class FakeAppUserRepository : IAppUserRepository
     {
-        private static Dictionary<string, AppUser> _AppUsers;
+        public static Dictionary<string, AppUser> _AppUsers;
 
         public FakeAppUserRepository()
         {

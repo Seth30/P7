@@ -38,19 +38,9 @@ namespace P5
             {
                 return EMPTY_DISCOVERER_ERROR;
             }
-            issue.ProjectId = GetNextId();
             _Issues.Add(issue);
 
             return NO_ERROR;
-        }
-        private int GetNextId()
-        {
-            int currentMaxId = 0;
-            foreach (Issue p in _Issues)
-            {
-                currentMaxId = p.Id;
-            }
-            return ++currentMaxId;
         }
     }
 }

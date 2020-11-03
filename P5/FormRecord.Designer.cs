@@ -48,12 +48,14 @@
             // 
             // IDbox
             // 
+            this.IDbox.Enabled = false;
             this.IDbox.Location = new System.Drawing.Point(104, 70);
             this.IDbox.Name = "IDbox";
             this.IDbox.ReadOnly = true;
             this.IDbox.Size = new System.Drawing.Size(71, 20);
             this.IDbox.TabIndex = 0;
             this.IDbox.Tag = "";
+            this.IDbox.Text = "CHANGE ME";
             // 
             // label1
             // 
@@ -211,6 +213,7 @@
             this.Controls.Add(this.IDbox);
             this.Name = "FormRecord";
             this.Text = "Record Issue";
+            this.Load += new System.EventHandler(this.Record_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
