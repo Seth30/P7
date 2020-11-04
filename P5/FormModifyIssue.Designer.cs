@@ -213,6 +213,7 @@
             this.Controls.Add(this.IDbox);
             this.Name = "FormModifyIssue";
             this.Text = "FormModifyIssue";
+            this.Load += new System.EventHandler(this.ModifyIssue_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

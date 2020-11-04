@@ -109,5 +109,13 @@ namespace P5
             form.ShowDialog();
             form.Dispose();
         }
+
+        private void issuesRemoveToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            string name = this.Text.Substring(7);
+            FormRemove form = new FormRemove(name);
+            form.ShowDialog();
+            form.Dispose();
+        }
     }
 }

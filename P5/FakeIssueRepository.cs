@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
 namespace P5
@@ -42,6 +44,40 @@ namespace P5
             _Issues.Add(issue);
 
             return NO_ERROR;
+        }
+        public string Modify(Issue missue)
+        {
+            string newname = missue.Title.Trim();
+            if (newname == "")
+            {
+                return EMPTY_TITLE_ERROR;
+            }
+            DateTime date = missue.DiscoveryDate;
+            if (date == null)
+            {
+                return EMPTY_DISCOVERY_DATETIME_ERROR;
+            }
+            if (date > DateTime.Now)
+            {
+                return FUTURE_DISCOVERY_DATETIME_ERROR;
+            }
+            string discoverer = missue.Discoverer;
+            if (discoverer == "")
+            {
+                return EMPTY_DISCOVERER_ERROR;
+            }
+            _Issues[_Issues.FindIndex(j => j.Id == missue.Id)] = missue;
+            return NO_ERROR;
+        }
+        public bool Remove(Issue rissue)
+        {
+            var item = _Issues.Single(y => y.Id == rissue.Id);
+            if (item != null)
+            {
+                _Issues.Remove(item);
+                return true;
+            }
+            return false;
         }
 
         public int GetTotalNumberOfIssues(int Projectid)

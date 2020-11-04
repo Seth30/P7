@@ -34,30 +34,29 @@ namespace P5
         }
         private void modifybutton_Click_1(object sender, EventArgs e)
         {
-                Issue issue = new Issue();
-                issue.Title = Titlebox.Text.Trim();
-                issue.Id = i;
-                issue.DiscoveryDate = dateTimePicker1.Value;
-                issue.Discoverer = discovererbox.GetItemText(discovererbox.SelectedItem);
-                issue.Component = textBox3.Text.Trim();
+                modifyme.Title = Titlebox.Text.Trim();
+                modifyme.Id = modifyme.Id;
+                modifyme.DiscoveryDate = dateTimePicker1.Value;
+                modifyme.Discoverer = discovererbox.GetItemText(discovererbox.SelectedItem);
+                modifyme.Component = textBox3.Text.Trim();
                 string statusval = statusbox.GetItemText(statusbox.SelectedItem);
-                issue.IssueStatusId = issueRepository.GetIdByStatus(statusval);
-                issue.InitialDescription = descriptbox.Text;
+                modifyme.IssueStatusId = issueRepository.GetIdByStatus(statusval);
+                modifyme.InitialDescription = descriptbox.Text;
                 foreach (Project p in FakeProjectRepository._Projects)
                 {
                     if (_SelectedProject == p.Name)
                     {
-                        issue.ProjectId = p.Id;
+                        modifyme.ProjectId = p.Id;
                     }
                 }
-                string result = newissue.Add(issue);
+                string result = newissue.Modify(modifyme);
                 if (result == FakeIssueRepository.NO_ERROR)
                 {
-                    MessageBox.Show("Issue Recorded Successfully.");
+                    MessageBox.Show("Issue Modified Successfully.");
                 }
                 else
                 {
-                    MessageBox.Show("Issue not recorded. " + result, "Attention.");
+                    MessageBox.Show("Issue not Modified. " + result, "Attention.");
                 }
                 this.Close();
             }
@@ -66,6 +65,5 @@ namespace P5
         {
             this.Close();
         }
-    }
     }
 }
