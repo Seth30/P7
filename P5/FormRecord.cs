@@ -39,7 +39,7 @@ namespace P5
             issue.DiscoveryDate = dateTimePicker1.Value;
             issue.Discoverer = discovererbox.GetItemText(discovererbox.SelectedItem);
             issue.Component = textBox3.Text.Trim();
-            string statusval = statusbox.SelectedItem.ToString();
+            string statusval = statusbox.GetItemText(statusbox.SelectedItem);
             issue.IssueStatusId = issueRepository.GetIdByStatus(statusval);
             issue.InitialDescription = descriptbox.Text;
             foreach (Project p in FakeProjectRepository._Projects)

@@ -17,6 +17,7 @@ namespace P5
         public FormDashboard(string pname)
         {
             InitializeComponent();
+            this.CenterToParent();
             int y=0;
             foreach (Project p in FakeProjectRepository._Projects)
             {
@@ -66,7 +67,6 @@ namespace P5
         private void Dashboard_Load(object sender, EventArgs e)
         {
             this.CenterToParent();
-            label4.Text = "5";
         }
 
         private void cancelbutton_Click(object sender, EventArgs e)

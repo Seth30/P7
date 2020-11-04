@@ -98,5 +98,27 @@ namespace P5
 
             return issues;
         }
+        public List<Issue> GetAll(int ProjectID)
+        {
+            List<Issue> issues = new List<Issue>();
+            foreach (Issue x in _Issues)
+            {
+                if (x.ProjectId == ProjectID)
+                    issues.Add(x);
+            }
+            return issues;
+        }
+        public Issue GetIssueById(int Id)
+        {
+            Issue thisone = new Issue();
+            foreach (Issue x in _Issues)
+            {
+                if (x.Id == Id)
+                {
+                    thisone = x;
+                }
+            }
+            return thisone;
+        }
     }
 }
