@@ -41,7 +41,7 @@ namespace P5
 
         private void removebutton_Click_1(object sender, EventArgs e)
         {
-            DialogResult isSure = MessageBox.Show("Are you sure you want to remove: ", "Attention", MessageBoxButtons.YesNo);
+            DialogResult isSure = MessageBox.Show("Are you sure you want to remove this issue? ", "Attention", MessageBoxButtons.YesNo);
             if (isSure == DialogResult.Yes)
             {
                 killme = newissue.GetIssueById(selectedId);
