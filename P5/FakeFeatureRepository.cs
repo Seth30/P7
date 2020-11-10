@@ -55,5 +55,39 @@ namespace P5
             features[features.FindIndex(j => j.Id == feature.Id)] = feature;
             return NO_ERROR;
         }
+        public List<Feature> GetAll(int ProjectID)
+        {
+            List<Feature> feature = new List<Feature>();
+            foreach (Feature x in features)
+            {
+                if (x.ProjectId == ProjectID)
+                    feature.Add(x);
+            }
+            return feature;
+        }
+        public Feature GetFeatureById(int featureId)
+        {
+            Feature pickme = new Feature();
+            foreach (Feature x in features)
+            {
+                if (x.Id == featureId)
+                    pickme = x;
+            }
+            return pickme;
+        }
+        public Feature GetFeatureByTitle(string title)
+        {
+            Feature pickme = new Feature();
+            foreach (Feature x in features)
+            {
+                if (x.Title == title)
+                    pickme = x;
+            }
+            return pickme;
+        }
+        public string Remove(Feature feature)
+        {
+            return "do work";
+        }
     }
 }
