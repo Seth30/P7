@@ -61,10 +61,12 @@
   <ItemGroup>
     <Compile Include="AppUser.cs" />
     <Compile Include="FakeAppUserRepository.cs" />
+    <Compile Include="FakeFeatureRepository.cs" />
     <Compile Include="FakeIssueRepository.cs" />
     <Compile Include="FakeIssueStatusRepository.cs" />
     <Compile Include="FakePreferenceRepository.cs" />
     <Compile Include="FakeProjectRepository.cs" />
+    <Compile Include="Feature.cs" />
     <Compile Include="FormDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +98,7 @@
       <DependentUpon>FormRemove.cs</DependentUpon>
     </Compile>
     <Compile Include="IAppUserRepository.cs" />
+    <Compile Include="IFeatureRepository.cs" />
     <Compile Include="IIssueRepository.cs" />
     <Compile Include="IIssueStatusRepository.cs" />
     <Compile Include="IPreferenceRepository.cs" />
