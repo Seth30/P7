@@ -117,5 +117,21 @@ namespace P5
             form.ShowDialog();
             form.Dispose();
         }
+
+        private void createToolStripMenuItem1_Click(object sender, System.EventArgs e)
+        {
+            string name = this.Text.Substring(7);
+            FormCreateFeature form = new FormCreateFeature(name);
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void modifyToolStripMenuItem1_Click(object sender, System.EventArgs e)
+        {
+            string name = this.Text.Substring(7);
+            FormModifyFeature form = new FormModifyFeature(name);
+            form.ShowDialog();
+            form.Dispose();
+        }
     }
 }

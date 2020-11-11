@@ -25,9 +25,9 @@ namespace P5
             }
             foreach (Feature x in features)
             {
-                if (x.Title == newname)
+                if (x.Title == newname)// && x.ProjectId == feature.ProjectId)
                 {
-                    return DUPLICATE_TITLE_ERROR;
+                    return DUPLICATE_TITLE_ERROR + newname;
                 }
             }
             int count = FakeProjectRepository._Projects.Count;
@@ -35,6 +35,9 @@ namespace P5
             {
                 return INVALID_PROJECT_ID_ERROR;
             }
+            int num = features.Count;
+            num++;
+            feature.Id = num;
             features.Add(feature);
             return NO_ERROR;
         }
@@ -47,7 +50,7 @@ namespace P5
             }
             foreach (Feature x in features)
             {
-                if (x.Title == newname)
+                if (x.Title == newname && x.ProjectId == feature.ProjectId)
                 {
                     return DUPLICATE_TITLE_ERROR;
                 }
