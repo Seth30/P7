@@ -44,7 +44,7 @@ namespace P5
 
         private void cancelbutton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

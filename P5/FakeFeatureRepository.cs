@@ -25,7 +25,7 @@ namespace P5
             }
             foreach (Feature x in features)
             {
-                if (x.Title == newname)// && x.ProjectId == feature.ProjectId)
+                if (x.Title == newname)
                 {
                     return DUPLICATE_TITLE_ERROR + newname;
                 }
@@ -35,7 +35,12 @@ namespace P5
             {
                 return INVALID_PROJECT_ID_ERROR;
             }
-            int num = features.Count;
+            int num=0;
+            foreach (Feature y in features)
+            {
+                if (y.ProjectId == feature.ProjectId)
+                    num++;
+            }
             num++;
             feature.Id = num;
             features.Add(feature);

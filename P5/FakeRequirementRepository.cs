@@ -20,7 +20,7 @@ namespace P5
 
         public string Add(Requirement requirement)
         {
-            string newname = requirement.Statement.Trim();
+            string newname = requirement.Statement;
             if (newname == "")
                 return EMPTY_STATEMENT_ERROR;
             foreach (Requirement x in _Requirements)
@@ -28,18 +28,28 @@ namespace P5
                 if (x.Statement == newname)
                     return DUPLICATE_STATEMENT_ERROR;
             }
+            int num = 0;
+            foreach (Requirement y in _Requirements)
+            {
+                if (y.ProjectId == requirement.ProjectId)
+                    num++;
+            }
+            num++;
+            requirement.Id = num;
             _Requirements.Add(requirement);
             return NO_ERROR;
         }
         public string Modify(Requirement requirement)
         {
-            string newname = requirement.Statement.Trim();
+            string newname = requirement.Statement;
             if (newname == "")
                 return EMPTY_STATEMENT_ERROR;
             foreach (Requirement x in _Requirements)
             {
                 if (x.Statement == newname)
-                    return DUPLICATE_STATEMENT_ERROR;
+                {
+                    return x.Statement + requirement.Statement + x.Id;
+                }
             }
             _Requirements[_Requirements.FindIndex(j => j.Id == requirement.Id)] = requirement;
             return NO_ERROR;

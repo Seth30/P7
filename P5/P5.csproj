@@ -74,6 +74,12 @@
     <Compile Include="FormCreateFeature.Designer.cs">
       <DependentUpon>FormCreateFeature.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCreateRequirement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateRequirement.Designer.cs">
+      <DependentUpon>FormCreateRequirement.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,18 @@
     </Compile>
     <Compile Include="FormModifyIssue.Designer.cs">
       <DependentUpon>FormModifyIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyRequirement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyRequirement.Designer.cs">
+      <DependentUpon>FormModifyRequirement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyRequirementpt2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyRequirementpt2.Designer.cs">
+      <DependentUpon>FormModifyRequirementpt2.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRecord.cs">
       <SubType>Form</SubType>
@@ -169,6 +187,9 @@
     <EmbeddedResource Include="FormCreateFeature.resx">
       <DependentUpon>FormCreateFeature.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCreateRequirement.resx">
+      <DependentUpon>FormCreateRequirement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDashboard.resx">
       <DependentUpon>FormDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +201,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormModifyIssue.resx">
       <DependentUpon>FormModifyIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifyRequirement.resx">
+      <DependentUpon>FormModifyRequirement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifyRequirementpt2.resx">
+      <DependentUpon>FormModifyRequirementpt2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRecord.resx">
       <DependentUpon>FormRecord.cs</DependentUpon>

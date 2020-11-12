@@ -133,5 +133,21 @@ namespace P5
             form.ShowDialog();
             form.Dispose();
         }
+
+        private void createToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            string name = this.Text.Substring(7);
+            FormCreateRequirement form = new FormCreateRequirement(name);
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void modifyToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            string name = this.Text.Substring(7);
+            FormModifyRequirement form = new FormModifyRequirement(name);
+            form.ShowDialog();
+            form.Dispose();
+        }
     }
 }
