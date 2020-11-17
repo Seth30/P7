@@ -95,7 +95,13 @@ namespace P5
         }
         public string Remove(Feature feature)
         {
-            return "do work";
+            var item = features.Single(y => y.Id == feature.Id);
+            if (item != null)
+            {
+                features.Remove(item);
+                return NO_ERROR;
+            }
+            return NOT_FOUND_ERROR;
         }
     }
 }

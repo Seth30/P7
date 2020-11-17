@@ -90,9 +90,12 @@ namespace P5
         }
         public void RemoveByFeatureId(int featureId)
         {
-            var item = _Requirements.Single(y => y.FeatureId == featureId);
-            if (item != null)
-                _Requirements.Remove(item);
+            _Requirements.RemoveAll(j => j.FeatureId == featureId);
+            foreach (Requirement x in _Requirements)
+            {
+                if (x.FeatureId == featureId)
+                    _Requirements.Remove(x);
+            }
         }
         public string Remove(Requirement requirement)
         {
